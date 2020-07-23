@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "546310302153",
+    "firebase_url": "https://studyd8-96e26.firebaseio.com",
+    "project_id": "studyd8-96e26",
+    "storage_bucket": "studyd8-96e26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546310302153:android:d4eabbeb216b853f2e6018",
+        "android_client_info": {
+          "package_name": "com.SAP.studyd8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546310302153-qqtd8boh610paf08i95aso424nvr991k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYznLwR4e0-CrWmrt-xv5wdAxHIVrtvrQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "546310302153-qqtd8boh610paf08i95aso424nvr991k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
