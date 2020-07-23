@@ -1,5 +1,6 @@
 package com.SAP.studyd8;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -10,15 +11,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import static com.google.firebase.auth.FirebaseAuth.getInstance;
 
 public class MainActivity extends AppCompatActivity {
-    TextView welcomeText;
+    TextView welcomeText, unverifiedText;
     FirebaseAuth fAuth;
-    Button signoutButton;
+    Button logoutButton,resendEmailButton;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +29,41 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         try {
             welcomeText = findViewById(R.id.welcomeText);
-            fAuth = getInstance();
-            signoutButton = findViewById(R.id.signoutButton);
+            logoutButton = findViewById(R.id.logoutButton);
+            unverifiedText = findViewById(R.id.unverifiedText);
+            resendEmailButton = findViewById(R.id.resendVerButton);
 
-            FirebaseUser user = fAuth.getCurrentUser();
+
+            fAuth = getInstance();
+            final FirebaseUser user = fAuth.getCurrentUser();
+
+
             if(fAuth.getCurrentUser()==null){
                 startActivity(new Intent(getApplicationContext(),Login.class));
                 finish();
             }
-            signoutButton.setOnClickListener(new View.OnClickListener() {
+            if(!user.isEmailVerified()){
+                unverifiedText.setVisibility(View.VISIBLE);
+                resendEmailButton.setVisibility(View.VISIBLE);
+                resendEmailButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getApplicationContext(),"Please check your email", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getApplicationContext(),"Unable to send verification email", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+            }
+
+            logoutButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     FirebaseAuth.getInstance().signOut( );
