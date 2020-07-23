@@ -29,7 +29,11 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        name = findViewById(R.id.profileName);
+        university =findViewById(R.id.profileUniversity);
 
+        fStore = FirebaseFirestore.getInstance();
+        fAuth =FirebaseAuth.getInstance();
         if(fAuth.getCurrentUser()==null){
             startActivity(new Intent(getApplicationContext(),Login.class));
             finish();
