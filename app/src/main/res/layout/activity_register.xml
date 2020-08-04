@@ -86,7 +86,7 @@
         app:layout_constraintHorizontal_bias="0.692"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regUserConfirmPassword"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/regLoginButton"
@@ -115,6 +115,25 @@
         android:layout_marginBottom="18dp"
         android:text="Already registered ? login here"
         app:layout_constraintBottom_toTopOf="@+id/regLoginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regButton"
+        app:layout_constraintVertical_bias="0.87" />
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/Gsignin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:layout_marginStart="275dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="24dp"
+        android:text="Text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/regLoginText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regButton" />

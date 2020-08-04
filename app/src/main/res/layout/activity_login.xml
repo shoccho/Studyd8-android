@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login">
+
     <TextView
         android:id="@+id/TloginToptext"
         android:layout_width="wrap_content"
@@ -66,9 +67,10 @@
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginUserPassword"
-        app:layout_constraintVertical_bias="0.22000003" />
+        app:layout_constraintVertical_bias="0.195" />
 
     <TextView
         android:id="@+id/loginRegisterText"
@@ -79,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        app:layout_constraintVertical_bias="0.58" />
+        app:layout_constraintVertical_bias="0.59000003" />
 
     <Button
         android:id="@+id/loginRegisterButton"
@@ -94,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginRegisterText"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.327" />
 
     <TextView
         android:id="@+id/forgotPassword"
@@ -103,10 +105,29 @@
         android:layout_marginStart="174dp"
         android:layout_marginTop="59dp"
         android:layout_marginEnd="179dp"
-        android:layout_marginBottom="67dp"
         android:text="Forgot your password?"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/loginRegisterText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:layout_constraintVertical_bias="0.65999997" />
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/Gsignin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="274dp"
+        android:layout_marginBottom="42dp"
+        android:text="Text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/forgotPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
