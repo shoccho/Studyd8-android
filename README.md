@@ -1,5 +1,12 @@
+# Notice
+
+Developement currently on https://github.com/forrestburton/StudyD8
+
 # Studyd8 
+
 An app that allows students to find other students to study with based on their college and the classes they are taking  
+
+
 # Core Functionality:
 
   Create a profile with personal info + school + classes you are taking + major + year in school + prefered study habits 
